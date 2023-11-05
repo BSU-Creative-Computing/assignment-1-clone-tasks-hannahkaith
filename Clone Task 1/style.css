@@ -1,0 +1,117 @@
+body{
+    /* width: 1048px; */
+    margin: 0 auto;
+    background-color: #F2F2F2;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+    background-color: #FEFEFD;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.1fr 1fr 1fr 0.1fr 0.1fr;
+    grid-template-areas:
+        "nav nav nav"
+        "first second third"
+        "fourth fifth sixth"
+        "text text text"
+        "footer footer footer";
+}
+
+
+/*Header Section CSS Properties*/
+header{
+    grid-area: nav;
+    padding: 10px;
+}
+
+.logo img{
+    width: 7%;
+}
+
+
+/*Main Content CSS Properties*/
+    /*border: 1px solid black;*/
+.pic1{
+    grid-area: first;
+}
+
+.pic2{
+    grid-area: second;
+}
+
+.pic3{
+    grid-area: third;
+}
+
+.pic4{
+    grid-area: fourth;
+}
+
+.pic5{
+    grid-area: fifth;
+}
+
+.pic6{
+    grid-area: sixth;
+}
+
+.mainText{
+    grid-area: text;
+    padding: 20px;
+}
+
+
+/*Footer Section CSS Properties*/
+footer{
+    grid-area: footer;
+    font-weight: bold;
+    height: 50px; 
+    text-align: center; 
+    line-height: 20px; 
+    background-color: #14181Dff;
+    color: #FEFEFD;
+}
+
+
+/* CSS Properties to make website Responsive */
+@media screen and (min-width:1024px) {
+    body{
+        width: 1048px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.1fr 1fr 0.1fr 0.1fr;
+        grid-template-areas:
+            "nav nav"
+            "first second"
+            "third fourth"
+            "fifth sixth"
+            "text text"
+            "footer footer";
+    }
+}
+
+@media screen and (max-width:480px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
+        grid-template-areas:
+            "nav"
+            "first"
+            "second"
+            "third"
+            "fourth"
+            "fifth"
+            "sixth"
+            "text"
+            "footer";
+    }
+}
+
+
+
