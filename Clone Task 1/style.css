@@ -1,5 +1,4 @@
 body{
-    /* width: 1048px; */
     margin: 0 auto;
     background-color: #F2F2F2;
     font-family: 'Courier New', Courier, monospace;
@@ -32,7 +31,6 @@ header{
 
 
 /*Main Content CSS Properties*/
-    /*border: 1px solid black;*/
 .pic1{
     grid-area: first;
 }
