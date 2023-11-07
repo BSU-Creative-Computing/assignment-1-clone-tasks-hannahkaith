@@ -1,0 +1,209 @@
+// To make website and assets Responsive !!
+@mixin verticalAlignment {
+    @media screen and (max-width:621px) {
+        @content;
+    }
+}
+
+@mixin firstBreakpoint {
+    @media screen and (min-width:801px) {
+        @content;
+    }
+}
+
+@mixin secondBreakpoint {
+    @media screen and (max-width:801px) and (min-width:481px) {
+        @content;
+    }
+}
+
+@mixin thirdBreakpoint {
+    @media screen and (max-width:481px) {
+        @content;
+    }
+}
+
+//Main Background Properties
+$mainBgcolor: #E2EFF1;
+
+
+//Header & Footer Properties
+$bgcolor: #8CCFF7;
+$footerHeight: 50px;
+$headerDisplay: none;
+
+
+//Bar Styling
+$barColours: #E2EFF1 #4e89ae #43658b #ed6663 #ffa372;
+$barHeight: 50px;
+
+
+//Circle Styling
+// Container Properties
+%containerStyling {
+    margin: auto;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+// circles
+$circleColours: #4e89ae #43658b #ed6663 #ffa372;
+$circleRadius: 50%;
+$width-height: 70px 80px 90px 100px;
+
+
+//Hover Effect
+$hoverEffect: #444;
+
+//------------------------------------//
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $mainBgcolor;
+}
+
+// Header Section
+.header {
+    background-color: $bgcolor;
+}
+
+.first,
+.second,
+.third {
+    display: $headerDisplay;
+}
+
+.first {
+    @include firstBreakpoint() {
+        margin: auto;
+        width: 40%;
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.second {
+    @include secondBreakpoint() {
+        margin: auto;
+        width: 40%;
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.third {
+    @include thirdBreakpoint() {
+        margin: auto;
+        width: 40%;
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+// Bar Section
+.bar1 {
+    background-color: nth($barColours, 1);
+    height: $barHeight;
+}
+
+.bar2 {
+    background-color: nth($barColours, 2);
+    height: $barHeight;
+}
+
+.bar3 {
+    background-color: nth($barColours, 3);
+    height: $barHeight;
+}
+
+.bar4 {
+    background-color: nth($barColours, 4);
+    height: $barHeight;
+}
+
+.bar5 {
+    background-color: nth($barColours, 5);
+    height: $barHeight;
+}
+
+.bar:hover{
+    background-color: $hoverEffect;
+}
+
+
+// Circle Section
+.container {
+    @include verticalAlignment() {
+        padding: 40px;
+        width: 50%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @extend %containerStyling
+}
+
+.circle1 {
+    background-color: nth($circleColours, 1);
+    border-radius: $circleRadius;
+    width: nth($width-height, 1);
+    height: nth($width-height, 1);
+}
+
+.circle2 {
+    background-color: nth($circleColours, 2);
+    border-radius: $circleRadius;
+    width: nth($width-height, 2);
+    height: nth($width-height, 2);
+}
+
+.circle3 {
+    background-color: nth($circleColours, 3);
+    border-radius: $circleRadius;
+    width: nth($width-height, 3);
+    height: nth($width-height, 3);
+}
+
+.circle4 {
+    background-color: nth($circleColours, 4);
+    border-radius: $circleRadius;
+    width: nth($width-height, 4);
+    height: nth($width-height, 4);
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4 {
+    @include verticalAlignment() {
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
+
+.circle:hover{
+    background-color: $hoverEffect;
+}
+
+
+// Footer Section
+.footer{
+    background-color: $bgcolor;
+    height: $barHeight;
+}
